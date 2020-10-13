@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 
 import RegistrationDialog from '../../Components/RegistrationDialog';
+import SingIn from '../../Components/SingInDialog';
 
 import styles from './singin.styles';
 import Box from '@material-ui/core/Box';
@@ -14,15 +15,21 @@ import Button from '@material-ui/core/Button';
 
 export default ()=>{
     const [openRegDialog, setOpenRegDialog] = useState(false);
+    const [openSingDialog, setOpenSingDialog] = useState(false);
     const classes = styles();
 
     const handleOpenRegDialog = () => {
         setOpenRegDialog(true);
     };
 
+    const handleOpenSingDialog = () => {
+        setOpenSingDialog(true);
+    };
+
     return(
         <div className={classes.wrapper}>
-            <RegistrationDialog open={openRegDialog} handleClose={setOpenRegDialog} /> 
+            <RegistrationDialog open={openRegDialog} handleClose={setOpenRegDialog} />
+            <SingIn open={openSingDialog} handleClose={setOpenSingDialog} /> 
             <div className={classes.info}>
                 <TwitterIcon style={{fontSize: '160vh'}} color='primary' className={classes.twitterbg} />
                 <ul>
@@ -81,7 +88,7 @@ export default ()=>{
                         <Box color='black' fontWeight='bold' fontSize='0.9rem'><h1>Узнайте, что происходит в мире прямо сейчас</h1></Box>
                         <Box style={{marginTop: 50, marginBottom: 10}} color='black' fontWeight='bold' fontSize='0.9rem'>Присоединяйтесь к Твиттеру прямо сейчас!</Box>
                         <Button onClick={handleOpenRegDialog} style={{marginBottom: 10}} fullWidth variant="contained" color="primary">Зарегистрироваться</Button>
-                        <Button style={{marginBottom: 10}} fullWidth variant="outlined" color="primary">Войти</Button>
+                        <Button onClick={handleOpenSingDialog} style={{marginBottom: 10}} fullWidth variant="outlined" color="primary">Войти</Button>
                     </div>
                 </div>
             </div>

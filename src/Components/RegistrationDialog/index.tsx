@@ -1,4 +1,4 @@
-import React, { FunctionComponentElement } from 'react';
+import React from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -9,7 +9,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 interface Props {
   open: boolean,
-  handleClose: any 
+  handleClose: React.Dispatch<React.SetStateAction<boolean>> 
 }
 
 export default function FormDialog(props: Props) {
