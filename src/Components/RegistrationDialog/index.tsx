@@ -2,7 +2,6 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -25,22 +24,55 @@ export default function FormDialog(props: Props) {
             To subscribe to this website, please enter your email address here. We will send updates
             occasionally.
           </DialogContentText>
-          <TextField
-            margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
-            fullWidth
-          />
+          <form>
+                <TextField
+                  autoFocus
+                    id="filled-full-width"
+                    variant="filled"
+                    type="text"
+                    name="name"
+                    label="Имя"
+                    placeholder="Как вас зовут"
+                    fullWidth
+                    style={{marginRight: 15}}
+                    margin="normal"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                />
+                <TextField
+                    id="filled-full-width"
+                    variant="filled"
+                    type="mail"
+                    name="email"
+                    label="Адрес электроной почты"
+                    placeholder="asd@mail.ru"
+                    fullWidth
+                    style={{marginRight: 15}}
+                    margin="normal"
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                />
+                <TextField
+                    id="filled-full-s"
+                    variant="filled"
+                    type="password"
+                    autoComplete='password'
+                    name="password"
+                    label="Пароль"
+                    fullWidth
+                    margin="normal"
+                    style={{marginRight: 15}}
+                    InputLabelProps={{
+                        shrink: true,
+                    }}
+                />
+                </form>
+                 <Button style={{marginBottom: 10}} fullWidth type='submit' variant="outlined" color="primary">Далее</Button>
+               
         </DialogContent>
-        <DialogActions>
-          <Button color="primary">
-            Cancel
-          </Button>
-          <Button  color="primary">
-            Subscribe
-          </Button>
-        </DialogActions>
+        
       </Dialog>
   );
 }

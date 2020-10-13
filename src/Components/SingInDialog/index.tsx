@@ -26,6 +26,7 @@ export default function FormDialog(props: Props) {
           </DialogContentText>
           <form>
                 <TextField
+                autoFocus
                     id="filled-full-width"
                     variant="filled"
                     type="mail"
