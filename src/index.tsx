@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from './theme';
+
+import App from './App/App';
+
+const rootDiv = document.getElementById('root');
+
 
 ReactDOM.render(
-    <App />,
-  document.getElementById('root')
+    <ThemeProvider theme={theme}>
+        <App />
+    </ThemeProvider>,
+    rootDiv
 );
-
-serviceWorker.unregister();
