@@ -1,5 +1,8 @@
 import React from 'react';
 
+import MainNav from '../../Components/MainNav';
+import MainContent from '../../Components/MainContent';
+
 import styles from './home.styles';
 
 import Grid from '@material-ui/core/Grid';
@@ -8,16 +11,18 @@ export default ()=>{
     const classes = styles();
 
     return(
+        <div className={classes.wrapper}>
         <Grid container>
-            <Grid xs={3} item>
-                1
+            <Grid md={2} item>
+                <MainNav />
             </Grid>
-            <Grid xs={5} item>
-                2
+            <Grid className={classes.main} md={6} item>
+                <MainContent />
             </Grid>
-            <Grid xs={4} item>
+            <Grid md={4} item>
                 3
             </Grid>
         </Grid>
+        </div>
     );
 }

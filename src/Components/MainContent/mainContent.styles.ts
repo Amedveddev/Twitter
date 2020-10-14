@@ -1,11 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles( theme => ({
-   wrapper: {
-       maxWidth: 1440,
-       margin: '0 auto',
-       [theme.breakpoints.down('sm')]: {}
-    },
     main: {
         borderLeft: '2px solid #f2f2f2',
         borderRight: '2px solid #f2f2f2',
