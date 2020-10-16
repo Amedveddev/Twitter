@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Tweet from '../../Components/Tweet';
+
 import styles from './mainContent.styles';
 
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
@@ -14,7 +16,7 @@ export default ()=>{
     return(
         <>
             <div className={classes.maintext}><h1>Home</h1></div>
-            <div className={classes.createpost}>
+            <div className={classes.createpost} style={{marginBottom: 20}}>
                 <div className={classes.posttext}>
                     <Avatar className={classes.postavatar} alt="Remy Sharp"  />
                     <TextareaAutosize 
@@ -40,9 +42,12 @@ export default ()=>{
                     <Button variant="contained" color="primary">Tweet</Button>
                 </div>
                 </div>
-                
             </div>
-
+            <Tweet user={{userName: 'andrey', profileName:'asld', userPhoto:''}} />
+            <Tweet user={{userName: 'andrey', profileName:'asld', userPhoto:''}} />
+            <Tweet user={{userName: 'andrey', profileName:'asld', userPhoto:''}} />
+            <Tweet user={{userName: 'andrey', profileName:'asld', userPhoto:''}} />
+            <Tweet user={{userName: 'andrey', profileName:'asld', userPhoto:''}} />
         </>
     );
 }

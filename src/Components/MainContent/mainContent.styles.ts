@@ -4,6 +4,7 @@ export default makeStyles( theme => ({
     root: {},
     maintext: {
         padding: 10,
+        zIndex: 10,
         backgroundColor: 'white',
         position: 'sticky',
         top: 0,
