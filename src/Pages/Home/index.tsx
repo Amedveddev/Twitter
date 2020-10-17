@@ -7,6 +7,7 @@ import SideBar from '../../Components/SideBar';
 import styles from './home.styles';
 
 import Grid from '@material-ui/core/Grid';
+import Hidden from '@material-ui/core/Hidden';
 
 export default ()=>{
     const classes = styles();
@@ -14,15 +15,17 @@ export default ()=>{
     return(
         <div className={classes.wrapper}>
         <Grid container>
-            <Grid md={3} item>
+            <Grid sm={1} md={3} item>
                 <MainNav />
             </Grid>
-            <Grid className={classes.main} md={6} item>
+            <Grid className={classes.main} xs={9} sm={11} md={6} item>
                 <MainContent />
             </Grid>
+            <Hidden smDown>
             <Grid style={{paddingTop: 10, paddingLeft: 15, paddingRight: 15}} md={3} item>
                 <SideBar />
             </Grid>
+            </Hidden>
         </Grid>
         </div>
     );

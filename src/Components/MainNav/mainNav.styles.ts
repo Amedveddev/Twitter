@@ -18,9 +18,12 @@ export default makeStyles( theme => ({
                marginBottom: 15
            }
        },
+       [theme.breakpoints.down('md')]: {
+            marginLeft: 0
+        }
     },
     tweettext:{},
     menutext: {
-       marginLeft: 15
+       marginLeft: 15,
     },
 }));

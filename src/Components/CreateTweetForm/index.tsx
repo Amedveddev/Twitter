@@ -31,6 +31,7 @@ export default ()=>{
                     aria-label="Textarea post"
                     placeholder='Что нового ?'
                     rowsMin={1}
+                    rowsMax={6}
                     maxLength={260}
                     value={text}
                 />

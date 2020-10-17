@@ -25,8 +25,8 @@ export default ({user}: Props): React.ReactElement=>{
 
     return(
         <Paper className={classes.mainPaper} square elevation={0}>
-            <Grid className={classes.wrapper} container>
-                <Grid item md={1}>
+            <Grid className={classes.wrapper} container style={{flexWrap: 'nowrap'}}>
+                <Grid style={{marginRight: 10}} item md={1}>
                     <Avatar src={user.userPhoto} alt='user Photo' />
                 </Grid>
                 <Grid item md={11}>
