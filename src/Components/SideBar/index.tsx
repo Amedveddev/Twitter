@@ -13,11 +13,12 @@ export default ()=>{
     const classes = styles();
 
     return(
-        <div style={{position: 'relative'}}>
+        <div style={{position: 'relative', minHeight: '100%'}}>
             <label style={{position: 'relative'}} htmlFor='searchText'>
                 <input id='searchText' className={classes.searchInput} placeholder='Поиск в твиттере' type='text' />
                 <SearchIcon className={classes.searchInputIcon} />
             </label>
+            <div style={{position: 'sticky', top: 10}}>
             <Paper elevation={0} className={classes.actualNews}>
                 <Typography style={{padding: 10, margin: 0, fontWeight: 'bold', borderBottom: '1px solid gray'}} component='h6' variant='h6'>Актуальные темы</Typography>
                 <ul>
@@ -43,6 +44,7 @@ export default ()=>{
                     <IconButton style={{marginLeft: 'auto'}} color="primary"><GroupAddIcon /></IconButton>
                 </div>
             </Paper>
+            </div>
         </div>
     );
 }

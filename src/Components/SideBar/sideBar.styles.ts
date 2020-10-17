@@ -35,13 +35,11 @@ export default makeStyles( theme => ({
       }
    },
    newFriends: {
-      position: 'sticky',
-      top: 0,
       backgroundColor: 'rgb(245, 248, 250)',
       borderRadius: 5,
       marginTop: 10,
       minHeight: 10,
-      width: '100%'
+      width: '100%',
    },
    newFriend: {
       padding: 10,
