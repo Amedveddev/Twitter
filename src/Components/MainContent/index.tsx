@@ -6,9 +6,11 @@ import styles from './mainContent.styles';
 
 import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import Avatar from '@material-ui/core/Avatar';
-import ImageIcon from '@material-ui/icons/Image';
 import Button from '@material-ui/core/Button';
-import Fab from '@material-ui/core/Fab';
+import ImageOutlinedIcon from '@material-ui/icons/ImageOutlined';
+import IconButton from '@material-ui/core/IconButton';
+import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
+
 
 export default ()=>{
     const classes = styles();
@@ -18,15 +20,17 @@ export default ()=>{
             <div className={classes.maintext}><h1>Home</h1></div>
             <div className={classes.createpost} style={{marginBottom: 20}}>
                 <div className={classes.posttext}>
-                    <Avatar className={classes.postavatar} alt="Remy Sharp"  />
-                    <TextareaAutosize 
-                        className={classes.textarea}
-                        aria-label="Textarea post"
-                        placeholder='Что нового ?'
-                        rowsMin={2}
-                        maxLength={235}
-                        rowsMax={3}
-                    />
+                    <div className={classes.postEnter}>
+                        <Avatar className={classes.postavatar} alt="Remy Sharp"  />
+                        <TextareaAutosize 
+                            className={classes.textarea}
+                            aria-label="Textarea post"
+                            placeholder='Что нового ?'
+                            rowsMin={1}
+                            maxLength={260}
+                            rowsMax={5}
+                        />
+                    </div>
                     <div className={classes.createPostNav}>
                     <label htmlFor="upload-photo">
                         <input
@@ -35,11 +39,14 @@ export default ()=>{
                             name="upload-photo"
                             type="file"
                         />
-                        <Fab color="primary" size="small" component="span" aria-label="add">
-                            <ImageIcon />
-                        </Fab>
+                        <IconButton color='primary'>
+                            <ImageOutlinedIcon />
+                        </IconButton>
                     </label>
-                    <Button variant="contained" color="primary">Tweet</Button>
+                    <IconButton color='primary'>
+                            <EmojiEmotionsOutlinedIcon />
+                    </IconButton>
+                    <Button style={{marginLeft: 'auto'}} variant="contained" color="primary">Tweet</Button>
                 </div>
                 </div>
             </div>

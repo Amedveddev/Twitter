@@ -16,35 +16,30 @@ export default makeStyles( theme => ({
             fontWeight: 'bold'
         },
     },
+    postEnter:{
+        display: 'flex'
+    },
     createpost: {
         backgroundColor: 'white',
     },
     posttext: {
         padding: 15,
-        display: 'flex',
-        alignItems: 'center',
-        flexWrap: 'wrap'
     },
     postavatar: {
-        marginRight: 15,
-        width: '56px!important',
-        height: '56px!important'
+        marginRight: 10,
     },
     textarea: {
         flex: 1,
         border: 'none',
         resize: 'none',
         padding: 10,
-        '&:focus': {
-            backgroundColor: '#f2f2f2',
-            outline: 'none'
-        }
+        outline: 'none',
+        fontSize: 16
     },
     createPostNav: {
         display: 'flex',
-        padding: 10,
-        flex: '1 1 100%',
         justifyContent: 'space-between',
-        marginLeft: 48
+        marginLeft: 45,
+        
     }
 }));
