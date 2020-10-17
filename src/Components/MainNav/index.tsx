@@ -1,6 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import styles from './mainNav.styles';
+
+import ModalBlock from '../ModalBlock';
+import TweetModal from '../CreateTweetForm';
 
 import TwitterIcon from '@material-ui/icons/Twitter';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
@@ -15,9 +18,22 @@ import Button from '@material-ui/core/Button';
 
 export default ()=>{
     const classes = styles();
+    const [tweetVisible, setTweetVisible] = useState<boolean>(false);
+
+    const openTweetModal = () =>{
+        setTweetVisible(true);
+    }
+
+    const closeTweetModel = () =>{
+        setTweetVisible(false);
+    }
+
     
     return(
         <div className={classes.menu}>
+            <ModalBlock open={tweetVisible} title='Создайте твит' handleClose={closeTweetModel}>
+                <TweetModal/>
+            </ModalBlock>
                     <TwitterIcon style={{fontSize: 45}} color='primary'/>
                     <ul>
                         <li>
@@ -69,7 +85,9 @@ export default ()=>{
                             </Button>
                         </li>
                     </ul>
-                    <Button style={{marginTop: 15, paddingLeft: 55, paddingRight: 55}} variant="contained" color="primary"> <span className={classes.tweettext}>Tweet</span></Button>
+                    <Button
+                    onClick={openTweetModal}
+                    style={{marginTop: 15, paddingLeft: 55, paddingRight: 55}} variant="contained" color="primary"> <span className={classes.tweettext}>Tweet</span></Button>
                 </div>
     );
 } 
