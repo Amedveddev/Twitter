@@ -1,4 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
+
+import {useDispatch, useSelector} from 'react-redux';
+import { setTweetText } from '../../Store/CreateTweet/actions';
 
 import styles from './createTweetForm.styles';
 
@@ -10,15 +13,17 @@ import IconButton from '@material-ui/core/IconButton';
 import EmojiEmotionsOutlinedIcon from '@material-ui/icons/EmojiEmotionsOutlined';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-export default ()=>{
+export default (props: any)=>{
+    const text: string = useSelector( (state: any) => state.CreateTweetReducer.tweetText);
+    const dispatch = useDispatch();
     const classes = styles();
-    const [text, setText] = useState<string>('');
     const textLimitCircle: number = Math.floor((text.length / 260) * 100);
     const symbolLeft: number = 260 - text.length;
     const circleColor: string = text.length === 260 ? 'red' : '';
 
-    const handleTextArea = (e: React.FormEvent<HTMLTextAreaElement>) =>{
-        setText(e.currentTarget.value);
+    const handleTextArea = (e: any) => {
+        e.stopPropagation();
+        dispatch(setTweetText(e.currentTarget.value));
     }
 
     return(
