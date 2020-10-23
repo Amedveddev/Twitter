@@ -16,7 +16,8 @@ interface Props {
     user: {
         userName: string,
         profileName: string,
-        userPhoto: string
+        userPhoto: string,
+        text: string
     }
 }
 
@@ -35,8 +36,8 @@ export default ({user}: Props): React.ReactElement=>{
                         <span style={{color: 'gray', marginLeft: 5}}>@{user.profileName} </span>
                     </Typography>
                     <Typography gutterBottom variant='body1'>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda consequuntur aperiam qui repudiandae hic corporis obcaecati aliquam? Sint corporis nulla expedita, excepturi labore temporibus odit, quasi consequatur est natus quae.
-                    </Typography>
+                        {user.text}
+                     </Typography>
                     <div className={classes.tweetNav}>
                         <IconButton color='primary'>
                             <CommentIcon style={{fontSize: '1.1rem'}} />
