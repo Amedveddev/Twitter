@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 
 import styles from './sideBar.styles';
 
@@ -8,9 +9,28 @@ import Paper from '@material-ui/core/Paper';
 import Avatar from '@material-ui/core/Avatar';
 import GroupAddIcon from '@material-ui/icons/GroupAdd';
 import IconButton from '@material-ui/core/IconButton';
+import { loadActual } from '../../Store/Actual/actions';
+import { Link } from 'react-router-dom';
 
 export default ()=>{
     const classes = styles();
+    const dispatch = useDispatch();
+    const actualState = useSelector((state: any)=>state.LoadActualReducer.items);
+    const actual = actualState.map( (actual: any)=>{
+        return <li key={actual.id}>
+            <Link style={{color: 'inherit'}} to={`/home/search?q=${actual.name}`}>
+            <div>
+            <b>{actual.name}</b>
+            <Typography color='secondary'>Твитов: {actual.count}</Typography>
+            </div>
+            </Link>
+            
+        </li>
+    } );
+
+    useEffect(()=>{
+        dispatch(loadActual());
+    }, [dispatch]);
 
     return(
         <div style={{position: 'relative', minHeight: '100%'}}>
@@ -22,18 +42,7 @@ export default ()=>{
             <Paper elevation={0} className={classes.actualNews}>
                 <Typography style={{padding: 10, margin: 0, fontWeight: 'bold', borderBottom: '1px solid gray'}} component='h6' variant='h6'>Актуальные темы</Typography>
                 <ul>
-                    <li>
-                        <b>Москва</b>
-                        <Typography color='secondary'>Твитов: 1 150</Typography>
-                    </li>
-                    <li>
-                        <b>Питер</b>
-                        <Typography color='secondary'>Твитов: 5 150</Typography>
-                    </li>
-                    <li>
-                        <b>Донецк</b>
-                        <Typography color='secondary'>Твитов: 150 150</Typography>
-                    </li>
+                    {actual}
                 </ul>
             </Paper>
             <Paper elevation={0} className={classes.newFriends}>
