@@ -9,7 +9,7 @@ const initialState: Tweets   = {
 const LoadTweetsReducer = (state: Tweets = initialState, action: any) => {
     switch (action.type) {
         case PUT_TWEETS:
-            return {...state, tweets: action.payload}
+            return {...state, tweets: action.payload, loading: true}
         case CHANGE_LOADING:
             return {...state, loading: action.payload}
         default:

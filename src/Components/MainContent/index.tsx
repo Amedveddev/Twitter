@@ -26,7 +26,7 @@ export default ()=>{
     } );
     const dispatch = useDispatch();
 
-    console.log('render');
+    console.log(tweetsState);
     
     
     useEffect(()=>{
@@ -40,7 +40,7 @@ export default ()=>{
                 <CreateTweetForm />
             </div>
             {
-                loading ? tweets : <CircularProgress />
+                loading ? tweets : <CircularProgress/>
             }
             
         </>

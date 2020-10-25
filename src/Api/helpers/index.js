@@ -1,4 +1,4 @@
-const baseUrl = '/reactcourseapi/';
+const baseUrl = '';
 
 export default function(url, options = {}, base = baseUrl) {
     return fetch(base + url, options).then(res=>{
