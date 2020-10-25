@@ -7,8 +7,12 @@ function fetchData() {
 }
 
 function* workerLoadTweets() {
-    const data = yield call(fetchData);
-    yield put(putTweets(data)); 
+    try {
+        const data = yield call(fetchData);
+        yield put(putTweets(data)); 
+    } catch (error) {
+        throw new Error(error);
+    }
 }
 
 export default function* watchLoadTweets() {

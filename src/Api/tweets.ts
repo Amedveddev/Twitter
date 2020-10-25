@@ -1,7 +1,7 @@
 import makeRequest from './helpers';
 
 function loadTweets() {
-    const url = 'https://trycode.pw/c/DLTXP.json';
+    const url = '/tweets';
     
     return makeRequest(url);
 }

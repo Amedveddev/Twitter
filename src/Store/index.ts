@@ -16,13 +16,11 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer, applyMiddleware(saga));
 
-saga.run(function* rootSaga() {
+saga.run(function* () {
     yield all([
         watchLoadTweets(),
     ])
-    // code after all-effect
   });
 
 export default store;
 
-watchLoadTweets
