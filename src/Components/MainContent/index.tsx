@@ -25,9 +25,6 @@ export default ()=>{
                 />
     } );
     const dispatch = useDispatch();
-
-    console.log(tweetsState);
-    
     
     useEffect(()=>{
         dispatch(loadTweets());

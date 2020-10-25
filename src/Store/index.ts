@@ -1,5 +1,6 @@
 import {combineReducers, createStore, applyMiddleware} from 'redux';
 import createSagaMiddleWare from 'redux-saga';
+import { all } from 'redux-saga/effects';
 
 import CreateTweetReducer from './CreateTweet/reducers';
 import LoadTweetsReducer from './Tweets/reducers';
@@ -15,6 +16,13 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer, applyMiddleware(saga));
 
-saga.run(watchLoadTweets);
+saga.run(function* rootSaga() {
+    yield all([
+        watchLoadTweets(),
+    ])
+    // code after all-effect
+  });
 
 export default store;
+
+watchLoadTweets
