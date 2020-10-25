@@ -11,13 +11,15 @@ import IconButton from '@material-ui/core/IconButton';
 import RepeatIcon from '@material-ui/icons/Repeat';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
+import { Link } from 'react-router-dom';
 
 interface Props {
     user: {
         userName: string,
         profileName: string,
         userPhoto: string,
-        text: string
+        text: string,
+        id: number
     }
 }
 
@@ -25,6 +27,7 @@ export default ({user}: Props): React.ReactElement=>{
     const classes = styles();
 
     return(
+        <Link style={{color: 'inherit', textDecoration: 'none'}} to={`/home/tweets/${user.id}`}>
         <Paper className={classes.mainPaper} square elevation={0}>
             <Grid className={classes.wrapper} container style={{flexWrap: 'nowrap'}}>
                 <Grid style={{marginRight: 10}} item md={1}>
@@ -57,5 +60,6 @@ export default ({user}: Props): React.ReactElement=>{
                 </Grid>
             </Grid>
         </Paper>
+        </Link>
     );
 }

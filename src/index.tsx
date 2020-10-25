@@ -16,7 +16,7 @@ const rootDiv = document.getElementById('root');
 ReactDOM.render(
     <Provider store={store}>
         <ThemeProvider theme={theme}>
-            <Router>
+            <Router >
                 <App />
             </Router>
         </ThemeProvider>

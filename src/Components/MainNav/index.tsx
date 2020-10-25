@@ -18,6 +18,7 @@ import Button from '@material-ui/core/Button';
 import Hidden from '@material-ui/core/Hidden';
 import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 import IconButton from '@material-ui/core/IconButton';
+import { Link } from 'react-router-dom';
 
 export default ()=>{
     const classes = styles();
@@ -40,10 +41,12 @@ export default ()=>{
                     <TwitterIcon style={{fontSize: 45}} color='primary'/>
                     <ul>
                         <li>
+                            <Link to="/home">
                             <Button fullWidth style={{justifyContent: 'left'}}>
                                 <HomeOutlinedIcon style={{fontSize: 35}} color='primary'/>
                                 <Hidden smDown><span className={classes.menutext}>Главная</span></Hidden>
                             </Button>
+                            </Link>
                         </li>
                         <li>
                             <Button fullWidth style={{justifyContent: 'left'}}>
