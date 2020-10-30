@@ -7,7 +7,15 @@ interface User {
     }
 }
 
+interface FullTweet {
+    userName: string,
+    profileName: string,
+    userPhoto: string,
+    text: string
+}
+
 export interface Tweets {
     tweets: User[],
-    loading: boolean
+    loading: boolean,
+    fullTweet: FullTweet
 }

@@ -6,4 +6,10 @@ function loadTweets() {
     return makeRequest(url);
 }
 
-export {loadTweets};
+function serchTweet(id: string) {
+    const url = `/tweets?id=${id}`;
+
+    return makeRequest(url);
+}
+
+export {loadTweets,serchTweet};

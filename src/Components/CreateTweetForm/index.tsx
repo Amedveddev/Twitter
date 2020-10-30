@@ -26,6 +26,10 @@ export default (props: any)=>{
         dispatch(setTweetText(e.currentTarget.value));
     }
 
+    const addTweet = () => {
+        dispatch();
+    }
+
     return(
         <div className={classes.posttext}>
             <div className={classes.postEnter}>
@@ -65,7 +69,7 @@ export default (props: any)=>{
                         left: '22%',transform: 'translateY(-50%) rotate(-90deg)', width: '20px', height: 20, color: circleColor  }} />
                     </>
                 }
-                <Button style={{marginLeft: '10px'}} variant="contained" color="primary">Tweet</Button>
+                <Button onClick={addTweet} style={{marginLeft: '10px'}} variant="contained" color="primary">Tweet</Button>
             </div>
         </div>
         </div>
