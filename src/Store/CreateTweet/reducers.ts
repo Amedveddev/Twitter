@@ -1,8 +1,8 @@
 import { TWEET_CHANGE_TEXT } from './actions';
 import {TweetType} from './types';
 
-const initialState: TweetType   = {
-    tweetText: ''
+const initialState: TweetType = {
+    tweetText: '',
 };
 
 const CreateTweetReducer = (state: TweetType = initialState, action: any) => {

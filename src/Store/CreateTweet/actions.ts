@@ -8,8 +8,9 @@ export const setTweetText = (text: string) => {
     };
 }
 
-export const createTweet = () => {
+export const createTweet = (text: string) => {
     return {
-        type: TWEET_CHANGE_TEXT
+        type: CREATE_TWEET,
+        payload: text
     };
 }

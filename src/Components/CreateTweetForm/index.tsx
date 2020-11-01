@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {useDispatch, useSelector} from 'react-redux';
-import { setTweetText } from '../../Store/CreateTweet/actions';
+import { createTweet, setTweetText } from '../../Store/CreateTweet/actions';
 
 import styles from './createTweetForm.styles';
 
@@ -27,7 +27,7 @@ export default (props: any)=>{
     }
 
     const addTweet = () => {
-        dispatch();
+        dispatch(createTweet(text));
     }
 
     return(
@@ -69,7 +69,12 @@ export default (props: any)=>{
                         left: '22%',transform: 'translateY(-50%) rotate(-90deg)', width: '20px', height: 20, color: circleColor  }} />
                     </>
                 }
-                <Button onClick={addTweet} style={{marginLeft: '10px'}} variant="contained" color="primary">Tweet</Button>
+                <Button
+                 disabled={text.length <= 0 ? true : false}
+                 onClick={addTweet} 
+                 style={{marginLeft: '10px'}} 
+                 variant="contained" 
+                 color="primary">Tweet</Button>
             </div>
         </div>
         </div>

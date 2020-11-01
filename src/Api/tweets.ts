@@ -12,4 +12,20 @@ function serchTweet(id: string) {
     return makeRequest(url);
 }
 
-export {loadTweets,serchTweet};
+function createTweet(text: string) {
+    const url = `/tweets`;
+
+    const obj = {
+        userName: 'test',
+        profileName: 'test_test',
+        userPhoto: '',
+        text
+    };
+
+    return makeRequest(url, {
+        method: 'POST',
+        body: JSON.stringify(obj)
+    });
+}
+
+export {loadTweets,serchTweet,createTweet};
