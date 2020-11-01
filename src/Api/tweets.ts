@@ -24,8 +24,13 @@ function createTweet(text: string) {
 
     return makeRequest(url, {
         method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify(obj)
     });
 }
 
 export {loadTweets,serchTweet,createTweet};
+
