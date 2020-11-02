@@ -2,7 +2,7 @@ const baseUrl = '';
 
 export default function(url, options = {}, base = baseUrl) {
     return fetch(base + url, options).then(res=>{
-        if (res.status !== 200) {
+        if (res.status !== 200 && res.status !== 201) {
             return res.text().then(function(text){
                 throw new Error(text);
             });

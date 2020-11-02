@@ -1,5 +1,6 @@
-import { takeLatest, call } from "redux-saga/effects";
+import { takeLatest, call, put } from "redux-saga/effects";
 import { createTweet } from "../../Api/tweets";
+import { addTweet } from "../Tweets/actions";
 import { CREATE_TWEET } from "./actions";
 
 function fetchData(text: string) {
@@ -8,7 +9,8 @@ function fetchData(text: string) {
 
 function* workerkAddTweet(action: any) {
     try {
-        yield call(fetchData, action.payload);    
+        const data = yield call(fetchData, action.payload);   
+        yield put(addTweet(data)); 
     } catch (error) {
         throw new Error(error);
     }

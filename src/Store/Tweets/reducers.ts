@@ -1,4 +1,4 @@
-import {CHANGE_LOADING, CLEAR_FULL_TWEET, PUT_FULL_TWEET, PUT_TWEETS } from './actions';
+import {ADD_TWEET, CHANGE_LOADING, CLEAR_FULL_TWEET, PUT_FULL_TWEET, PUT_TWEETS } from './actions';
 import {Tweets} from './types';
 
 const initialState: Tweets = {
@@ -17,6 +17,10 @@ const LoadTweetsReducer = (state: Tweets = initialState, action: any) => {
             return {...state, fullTweet: action.payload}
         case CLEAR_FULL_TWEET:
             return {...state, fullTweet: []}
+        case ADD_TWEET:
+            const tweets = [...state.tweets];
+            tweets.unshift(action.payload);
+            return {...state, tweets}
         default:
             return {...state};
     }

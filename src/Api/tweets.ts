@@ -33,4 +33,3 @@ function createTweet(text: string) {
 }
 
 export {loadTweets,serchTweet,createTweet};
-

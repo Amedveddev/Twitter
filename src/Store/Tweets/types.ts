@@ -7,7 +7,7 @@ interface User {
     }
 }
 
-interface FullTweet {
+export interface FullTweet {
     userName: string,
     profileName: string,
     userPhoto: string,

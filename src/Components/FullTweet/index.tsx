@@ -13,7 +13,7 @@ export default ()=>{
         dispatch(loadFullTweet(params.id));
 
         return () => {dispatch(clearFullTweet());}
-    }, [dispatch]);
+    }, [dispatch, params.id]);
 
     return (
         <Tweet user={{
