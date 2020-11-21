@@ -36,7 +36,7 @@ export default ()=>{
     return(
         <div className={classes.menu}>
             <ModalBlock open={tweetVisible} title='Создайте твит' handleClose={closeTweetModel}>
-                <TweetModal/>
+                <TweetModal onClose={closeTweetModel} />
             </ModalBlock>
                     <TwitterIcon style={{fontSize: 45}} color='primary'/>
                     <ul>

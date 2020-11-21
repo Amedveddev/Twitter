@@ -3,7 +3,7 @@ import makeRequest from './helpers';
 function loadTweets() {
     const url = '/tweets';
     
-    return makeRequest(url);
+    return makeRequest(url, {method: 'GET'});
 }
 
 function serchTweet(id: string) {

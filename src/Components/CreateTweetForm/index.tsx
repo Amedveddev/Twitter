@@ -29,6 +29,7 @@ export default (props: any)=>{
     const addTweet = () => {
         dispatch(createTweet(text));
         dispatch(setTweetText(''));
+        props.onClose();
     }
 
     return(

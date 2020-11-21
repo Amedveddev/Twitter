@@ -14,7 +14,7 @@ function fetchSearch(id: string) {
 function* workerLoadTweets() {
     try {
         const data = yield call(fetchData);
-        yield put(putTweets(data)); 
+        yield put(putTweets(data.tweets)); 
     } catch (error) {
         throw new Error(error);
     }

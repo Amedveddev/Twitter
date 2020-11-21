@@ -39,34 +39,5 @@
       "userPhoto": "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
     }
   ],
-  "tweets": [
-    {
-      "userName": "test",
-      "profileName": "test_test",
-      "userPhoto": "",
-      "text": "Тестовый твит",
-      "id": 1
-    },
-    {
-      "userName": "test",
-      "profileName": "test_test",
-      "userPhoto": "",
-      "text": "ыв",
-      "id": 2
-    },
-    {
-      "userName": "test",
-      "profileName": "test_test",
-      "userPhoto": "",
-      "text": "Тестовый твит 1",
-      "id": 3
-    },
-    {
-      "userName": "test",
-      "profileName": "test_test",
-      "userPhoto": "",
-      "text": "dfsdfsdfsf",
-      "id": 4
-    }
-  ]
+  "tweets": []
 }
